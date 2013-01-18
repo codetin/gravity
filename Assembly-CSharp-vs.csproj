@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{14FE793F-9A3B-A2E9-019D-42417F4C0E21}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;ENABLE_AUDIO_FMOD;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PHYSICS;ENABLE_TERRAIN;ENABLE_CACHING;ENABLE_GENERICS;UNITY_ANDROID_API;ENABLE_CLOTH;ENABLE_AUDIO;ENABLE_WWW;ENABLE_SHADOWS;UNITY_4_0_0;UNITY_4_0;ENABLE_PROFILER;UNITY_EDITOR;UNITY_TEAM_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\VirtualControls\Examples\Scripts\VCSuiteTest.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\Interaction\UIButton.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\Interaction\UIButtonColor.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\Tweening\TweenColor.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\Tweening\UITweener.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIAnchor.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIAtlas.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UICamera.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIFilledSprite.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIFont.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIInput.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIInputSaved.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UILabel.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIOrthoCamera.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIPanel.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIRoot.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UISlicedSprite.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UISprite.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UISpriteAnimation.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIStretch.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UITextList.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UITexture.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UITiledSprite.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UITooltip.cs" />
+     <Compile Include="Assets\VirtualControls\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\Base\VCAnalogJoystickBase.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\Base\VCButtonBase.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\Base\VCDPadBase.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\EZGUI\VCAnalogJoystickEzgui.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\EZGUI\VCButtonEzgui.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\GUITexture\VCAnalogJoystickGuiTexture.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\GUITexture\VCButtonGuiTexture.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\Generic\VCButtonWithBehaviours.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\Generic\VCDPadWithButtons.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\NGUI\VCAnalogJoystickNgui.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\NGUI\VCButtonNgui.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\VCCollidableObject.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\VCPluginSettings.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\VCTouchController.cs" />
+     <Compile Include="Assets\VirtualControls\Scripts\VCUtils.cs" />
+     <Compile Include="Assets\script\BulletControl.cs" />
+     <Compile Include="Assets\script\Enemy.cs" />
+     <Compile Include="Assets\script\EnemyAnt.cs" />
+     <Compile Include="Assets\script\EnemySnake.cs" />
+     <Compile Include="Assets\script\Life.cs" />
+     <Compile Include="Assets\script\MPJoystick.cs" />
+     <Compile Include="Assets\script\Main.cs" />
+     <Compile Include="Assets\script\Weapon.cs" />
+     <Compile Include="Assets\script\WeaponManager.cs" />
+     <Compile Include="Assets\script\WeaponNormal.cs" />
+     <Compile Include="Assets\script\box.cs" />
+     <Compile Include="Assets\script\player.cs" />
+     <None Include="Assets\VirtualControls\readme-1.3.txt" />
+     <None Include="Assets\VirtualControls\NGUI\ReadMe.txt" />
+     <None Include="Assets\VirtualControls\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+ <Reference Include="NGUI">
+ <HintPath>Assets\VirtualControls\NGUI\DLLs\NGUI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
