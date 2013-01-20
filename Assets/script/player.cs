@@ -7,8 +7,6 @@ public class player : MonoBehaviour
 	public float speed = 10;
 	public MPJoystick leftstick;
 	public MPJoystick rightstick;
-	public VCAnalogJoystickBase joyl;
-	public VCAnalogJoystickBase joyr;
 	public float angle;
 	public float oldangle;
 	public Vector2 mousePosition = Vector2.zero;
