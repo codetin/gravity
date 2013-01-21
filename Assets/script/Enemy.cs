@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
 	public void CheckHP ()
 	{
 		if (GetComponent<Life> ().m_HP <= 0) {
+			player.GetComponent<player> ().m_Score += GetComponent<Life> ().m_Score;
 			Destroy (gameObject);
 		}
 	}
