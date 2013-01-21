@@ -19,7 +19,7 @@ public class Main : MonoBehaviour
 	{
 		m_EnemyElapseTime += Time.deltaTime;
 		if (m_EnemyElapseTime > m_EnemyInterval) {
-			CreateEnemy ();
+			CreateEnemy (Random.Range(3,5));
 			m_EnemyElapseTime = 0;
 		}
 		
@@ -31,38 +31,44 @@ public class Main : MonoBehaviour
 		
 	}
 	
-	void CreateEnemy ()
+	void CreateEnemy (int m_EnemyNumber)
 	{
 		int m_CreateSide = Random.Range (1, 5);
-		int m_EnemyKind = Random.Range (0, 2);
+		int m_EnemyKind = Random.Range (0, m_Enemys.Length);
 		Vector3 position = Vector3.zero;
-		switch (m_CreateSide) {
-		//up
-		case 1:
-			position = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (0, Screen.width), Screen.height, Camera.main.transform.position.y-10));	
-			break;
-		//down
-		case 2:
-			position = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (0, Screen.width), 0, Camera.main.transform.position.y-10));
-			break;
-		//left
-		case 3:
-			position = Camera.main.ScreenToWorldPoint (new Vector3 (0, Random.Range (0, Screen.height), Camera.main.transform.position.y-10));
-			break;
-		//right
-		case 4:
-			position = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, Random.Range (0, Screen.height), Camera.main.transform.position.y-10));
-			break;
+		for (int i=0; i<m_EnemyNumber; i++) {
+			switch (m_CreateSide) {
+			//up
+			case 1:
+				position = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (0, Screen.width), Screen.height, Camera.main.transform.position.y - 10));	
+				break;
+			//down
+			case 2:
+				position = Camera.main.ScreenToWorldPoint (new Vector3 (Random.Range (0, Screen.width), 0, Camera.main.transform.position.y - 10));
+				break;
+			//left
+			case 3:
+				position = Camera.main.ScreenToWorldPoint (new Vector3 (0, Random.Range (0, Screen.height), Camera.main.transform.position.y - 10));
+				break;
+			//right
+			case 4:
+				position = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, Random.Range (0, Screen.height), Camera.main.transform.position.y - 10));
+				break;
+			}
+			Object Enemy = Instantiate (m_Enemys [m_EnemyKind], position, Quaternion.Euler (0, 0, 0));
 		}
-		//position = Camera.main.ScreenToWorldPoint (new Vector3(0,0,200));
-		
-		//Vector3 position = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range (0,Screen.width),Random.Range (0,Screen.height),20));
-//		foreach(Object EnemyPre in m_Enemys)
-//		{
-////			Object Enemy = Instantiate (m_EnemyPre, position, Quaternion.Euler (0, 0, 0));
-//			Object Enemy = Instantiate (EnemyPre, position, Quaternion.Euler (0, 0, 0));
-//		}
-		Debug.Log(m_CreateSide);
-		Object Enemy = Instantiate (m_Enemys [m_EnemyKind], position, Quaternion.Euler (0, 0, 0));
 	}
+	
+	void OnGUI ()
+	{
+		GUILayout.BeginArea (new Rect (0, 0, Screen.width, 50));
+		GUILayout.BeginHorizontal ();
+		GUILayout.Box ("HP ");
+		GUILayout.FlexibleSpace ();
+		GUILayout.Box ("Score");
+		GUILayout.EndHorizontal ();
+		GUILayout.EndArea ();
+		
+	}
+	
 }

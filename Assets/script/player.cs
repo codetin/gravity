@@ -103,11 +103,4 @@ public class player : MonoBehaviour
 		//Destroy(transform.gameObject);
 	}
 	
-	void OnGUI ()
-	{
-		GUI.Label(new Rect(20,20,200,20),angle.ToString());
-		GUI.Label (new Rect (20, 50, 200, 20), leftstick.position.x + " " + leftstick.position.y);
-		GUI.Label (new Rect (20, 70, 200, 20), rightstick.position.x + " " + rightstick.position.y);
-		//(Mathf.Rad2Deg*Mathf.Atan2(10,5)).ToString()
-	}
 }

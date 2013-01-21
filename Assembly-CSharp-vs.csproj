@@ -46,8 +46,11 @@
   <ItemGroup>
      <Compile Include="Assets\script\BulletControl.cs" />
      <Compile Include="Assets\script\Enemy.cs" />
-     <Compile Include="Assets\script\EnemyAnt.cs" />
-     <Compile Include="Assets\script\EnemySnake.cs" />
+     <Compile Include="Assets\script\EnemyButterfly.cs" />
+     <Compile Include="Assets\script\EnemyCircle.cs" />
+     <Compile Include="Assets\script\EnemyCross.cs" />
+     <Compile Include="Assets\script\EnemyRhombus.cs" />
+     <Compile Include="Assets\script\EnemySquare.cs" />
      <Compile Include="Assets\script\Life.cs" />
      <Compile Include="Assets\script\MPJoystick.cs" />
      <Compile Include="Assets\script\Main.cs" />
