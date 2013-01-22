@@ -29,7 +29,7 @@ public class Main : MonoBehaviour
 		if (Application.platform == RuntimePlatform.Android && (Input.GetKeyDown (KeyCode.Escape))) {
 			Application.Quit ();
 		}
-
+		
 		
 	}
 	
@@ -42,49 +42,59 @@ public class Main : MonoBehaviour
 		int m_CreateSide = Random.Range (1, 5);
 		int m_EnemyKind = Random.Range (0, m_Enemys.Length + 1);
 		Vector3 position = Vector3.zero;
+		Vector3 m_playerPos = Camera.main.WorldToScreenPoint (player.transform.position);
 		for (int i=0; i<m_EnemyNumber; i++) {
-			switch (m_CreateSide) {
-			//up
-			case 1:
-				m_heightPos = Screen.height;
-				while (m_widthPos-m_oldWidthPos<10 && m_widthPos-m_oldWidthPos>-10) {
-					m_widthPos = Random.Range (0, Screen.width);
-				}
-				m_oldWidthPos = m_widthPos;
+			if (Random.Range (0, 2)==0) {
+				switch (m_CreateSide) {
+				//up
+				case 1:
+					m_heightPos = Screen.height;
+					while (m_widthPos-m_oldWidthPos<10 && m_widthPos-m_oldWidthPos>-10) {
+						m_widthPos = Random.Range (0, Screen.width);
+					}
+					m_oldWidthPos = m_widthPos;
 				//position = Camera.main.ScreenToWorldPoint (new Vector3 (m_widthPos, m_heightPos, Camera.main.transform.position.y - 10));	
-				break;
-			//down
-			case 2:
+					break;
+				//down
+				case 2:
 				
-				m_heightPos = 0;
-				while (m_widthPos-m_oldWidthPos<10 && m_widthPos-m_oldWidthPos>-10) {
-					m_widthPos = Random.Range (0, Screen.width);
-				}
-				m_oldWidthPos = m_widthPos;
+					m_heightPos = 0;
+					while (m_widthPos-m_oldWidthPos<10 && m_widthPos-m_oldWidthPos>-10) {
+						m_widthPos = Random.Range (0, Screen.width);
+					}
+					m_oldWidthPos = m_widthPos;
 				//position = Camera.main.ScreenToWorldPoint (new Vector3 (, 0, Camera.main.transform.position.y - 10));
-				break;
-			//left
-			case 3:
-				m_widthPos = 0;
+					break;
+				//left
+				case 3:
+					m_widthPos = 0;
 
-				while (m_heightPos-m_oldHeightPos<10 && m_heightPos-m_oldHeightPos>-10) {
-					m_heightPos = Random.Range (0, Screen.height);
-				}
-				m_oldHeightPos = m_heightPos;
+					while (m_heightPos-m_oldHeightPos<10 && m_heightPos-m_oldHeightPos>-10) {
+						m_heightPos = Random.Range (0, Screen.height);
+					}
+					m_oldHeightPos = m_heightPos;
 				//position = Camera.main.ScreenToWorldPoint (new Vector3 (0, , Camera.main.transform.position.y - 10));
-				break;
-			//right
-			case 4:
-				m_widthPos = Screen.width;
-				while (m_heightPos-m_oldHeightPos<10 && m_heightPos-m_oldHeightPos>-10) {
-					m_heightPos = Random.Range (0, Screen.height);
-				}
-				m_oldHeightPos = m_heightPos;
+					break;
+				//right
+				case 4:
+					m_widthPos = Screen.width;
+					while (m_heightPos-m_oldHeightPos<10 && m_heightPos-m_oldHeightPos>-10) {
+						m_heightPos = Random.Range (0, Screen.height);
+					}
+					m_oldHeightPos = m_heightPos;
 				//position = Camera.main.ScreenToWorldPoint (new Vector3 (, , Camera.main.transform.position.y - 10));
-				break;
+					break;
+				}
+			} else {
+				Rect deadRect = new Rect (m_playerPos.x - 200, m_playerPos.y - 200, 400f, 400f);
+				do {
+					m_heightPos = Random.Range (0, Screen.height);
+					m_widthPos = Random.Range (0, Screen.width);
+				} while(deadRect.Contains(new Vector2(m_widthPos,m_heightPos)));
 			}
 			position = Camera.main.ScreenToWorldPoint (new Vector3 (m_widthPos, m_heightPos, Camera.main.transform.position.y - 10));
 			Instantiate (m_Enemys [m_EnemyKind], position, Quaternion.Euler (0, 0, 0));
+			
 		}
 	}
 	
