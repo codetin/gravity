@@ -18,7 +18,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;ENABLE_AUDIO_FMOD;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PHYSICS;ENABLE_TERRAIN;ENABLE_CACHING;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_CLOTH;ENABLE_MOVIES;ENABLE_AUDIO;ENABLE_WWW;ENABLE_SHADOWS;ENABLE_DUCK_TYPING;UNITY_4_0_0;UNITY_4_0;ENABLE_PROFILER;UNITY_EDITOR;UNITY_TEAM_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;ENABLE_AUDIO_FMOD;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PHYSICS;ENABLE_TERRAIN;ENABLE_CACHING;ENABLE_GENERICS;UNITY_ANDROID_API;ENABLE_CLOTH;ENABLE_AUDIO;ENABLE_WWW;ENABLE_SHADOWS;UNITY_4_0_0;UNITY_4_0;ENABLE_PROFILER;UNITY_EDITOR;UNITY_TEAM_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -44,21 +44,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\script\BulletControl.cs" />
-     <Compile Include="Assets\script\Enemy.cs" />
-     <Compile Include="Assets\script\EnemyButterfly.cs" />
-     <Compile Include="Assets\script\EnemyCircle.cs" />
-     <Compile Include="Assets\script\EnemyCross.cs" />
-     <Compile Include="Assets\script\EnemyRhombus.cs" />
-     <Compile Include="Assets\script\EnemySquare.cs" />
+     <Compile Include="Assets\script\Enemy\Enemy.cs" />
+     <Compile Include="Assets\script\Enemy\EnemyButterfly.cs" />
+     <Compile Include="Assets\script\Enemy\EnemyCircle.cs" />
+     <Compile Include="Assets\script\Enemy\EnemyCross.cs" />
+     <Compile Include="Assets\script\Enemy\EnemyRhombus.cs" />
+     <Compile Include="Assets\script\Enemy\EnemySquare.cs" />
      <Compile Include="Assets\script\Life.cs" />
      <Compile Include="Assets\script\MPJoystick.cs" />
      <Compile Include="Assets\script\Main.cs" />
-     <Compile Include="Assets\script\Weapon.cs" />
-     <Compile Include="Assets\script\WeaponManager.cs" />
-     <Compile Include="Assets\script\WeaponNormal.cs" />
-     <Compile Include="Assets\script\box.cs" />
+     <Compile Include="Assets\script\Weapon\BulletControl.cs" />
+     <Compile Include="Assets\script\Weapon\Weapon.cs" />
+     <Compile Include="Assets\script\Weapon\WeaponManager.cs" />
+     <Compile Include="Assets\script\Weapon\WeaponNormal.cs" />
      <Compile Include="Assets\script\player.cs" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

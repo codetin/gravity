@@ -110,7 +110,7 @@ public class MPJoystick : MonoBehaviour
 		else { 
 			for (int i = 0; i < count; i++) { 
 				Touch touch = Input.GetTouch (i); 
-				Vector2 guiTouchPos = touch.position - guiTouchOffset; 
+				//Vector2 guiTouchPos = touch.position - guiTouchOffset; 
 				bool shouldLatchFinger = false; 
 				if (touchPad) { 
 					if (touchZone.Contains (touch.position)) 
