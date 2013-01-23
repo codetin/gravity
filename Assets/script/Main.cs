@@ -40,7 +40,7 @@ public class Main : MonoBehaviour
 		float m_oldWidthPos = 0;
 		float m_oldHeightPos = 0;
 		int m_CreateSide = Random.Range (1, 5);
-		int m_EnemyKind = Random.Range (0, m_Enemys.Length + 1);
+		int m_EnemyKind = Random.Range (0, m_Enemys.Length);
 		Vector3 position = Vector3.zero;
 		Vector3 m_playerPos = Camera.main.WorldToScreenPoint (player.transform.position);
 		for (int i=0; i<m_EnemyNumber; i++) {

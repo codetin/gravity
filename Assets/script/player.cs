@@ -17,6 +17,8 @@ public class player : MonoBehaviour
 	public Object m_tailPre;
 	public Transform m_tailPoint;
 	protected GameObject tail;
+	public GameObject m_explo;
+	public Color m_Color;
 	// Use this for initialization
 	void Start ()
 	{
@@ -44,7 +46,6 @@ public class player : MonoBehaviour
 		if (leftstick.position.x >= -1 && leftstick.position.x < 0) { 
 			transform.Translate (Vector3.left * Time.deltaTime * speed, Space.World);
 			//tail.SetActive (true);
-			
 			if (tail == null) {
 				tail = (GameObject)Instantiate (m_tailPre, m_tailPoint.position, m_tailPoint.rotation);
 				tail.transform.parent = this.transform;
@@ -88,6 +89,9 @@ public class player : MonoBehaviour
 	void CheckHP ()
 	{
 		if (GetComponent<Life> ().m_HP <= 0) {
+			m_explo.particleSystem.startColor = m_Color;
+			GameObject explo = (GameObject)Instantiate (m_explo, transform.position, Quaternion.Euler (0, 0, 0));
+			Destroy (explo, 1f);
 			Destroy (gameObject);
 		}
 	}

@@ -10,11 +10,14 @@ public class Enemy : MonoBehaviour
 	public float m_EnemyStopDelay = 0.5f;
 	protected float m_ElapseTime = 0;
 	protected int m_MoveFlag = 0;
+	public GameObject m_explo;
+	public Color m_Color;
 	// Use this for initialization
 	void Start ()
 	{
 		attack = GetComponent<Life> ().m_Attack;
 		player = GameObject.FindGameObjectWithTag ("player");
+		
 	}
 	
 	// Update is called once per frame
@@ -42,6 +45,9 @@ public class Enemy : MonoBehaviour
 	{
 		if (GetComponent<Life> ().m_HP <= 0) {
 			player.GetComponent<player> ().m_Score += GetComponent<Life> ().m_Score;
+			m_explo.particleSystem.startColor=m_Color;
+			GameObject explo = (GameObject)Instantiate (m_explo, transform.position, Quaternion.Euler (0, 0, 0));
+			Destroy (explo, 1f);
 			Destroy (gameObject);
 		}
 	}
