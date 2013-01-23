@@ -46,42 +46,27 @@ public class player : MonoBehaviour
 		if (leftstick.position.x >= -1 && leftstick.position.x < 0) { 
 			transform.Translate (Vector3.left * Time.deltaTime * speed, Space.World);
 			//tail.SetActive (true);
-			if (tail == null) {
-				tail = (GameObject)Instantiate (m_tailPre, m_tailPoint.position, m_tailPoint.rotation);
-				tail.transform.parent = this.transform;
-			}
+//			if (tail == null) {
+//				tail = (GameObject)Instantiate (m_tailPre, m_tailPoint.position, m_tailPoint.rotation);
+//				tail.transform.parent = this.transform;
+//			}
 		}
 		//right
 		if (leftstick.position.x <= 1 && leftstick.position.x > 0) { 
 			transform.Translate (Vector3.right * Time.deltaTime * speed, Space.World);
-			
-			if (tail == null) {
-				tail = (GameObject)Instantiate (m_tailPre, m_tailPoint.position, m_tailPoint.rotation);
-				tail.transform.parent = this.transform;
-			}
 		}
 		//down
 		if (leftstick.position.y >= -1 && leftstick.position.y < 0) { 
 			transform.Translate (Vector3.back * Time.deltaTime * speed, Space.World);
-			
-			if (tail == null) {
-				tail = (GameObject)Instantiate (m_tailPre, m_tailPoint.position, m_tailPoint.rotation);
-				tail.transform.parent = this.transform;
-			}
 		}
 		//up
 		if (leftstick.position.y <= 1 && leftstick.position.y > 0) { 
 			transform.Translate (Vector3.forward * Time.deltaTime * speed, Space.World);
-			
-			if (tail == null) {
-				tail = (GameObject)Instantiate (m_tailPre, m_tailPoint.position, m_tailPoint.rotation);
-				tail.transform.parent = this.transform;
-			}
 		}
 		
 		if (leftstick.position.x == 0 && leftstick.position.y == 0) {
-			if (tail != null)
-				GameObject.Destroy (tail);
+			//if (tail != null)
+			//	GameObject.Destroy (tail);
 		}
 		CheckHP ();
 	}
@@ -93,6 +78,7 @@ public class player : MonoBehaviour
 			GameObject explo = (GameObject)Instantiate (m_explo, transform.position, Quaternion.Euler (0, 0, 0));
 			Destroy (explo, 1f);
 			Destroy (gameObject);
+			Application.LoadLevel(0);
 		}
 	}
 
