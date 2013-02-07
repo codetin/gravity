@@ -6,7 +6,7 @@ public class Main : MonoBehaviour
 	public GameObject player;
 	public Object m_EnemyPre;
 	public Object[] m_Enemys;
-	public float m_EnemyInterval = 1;
+	public float m_EnemyInterval = 0.5f;
 	public float m_EnemyElapseTime = 0;
 	public GUISkin guiskin;
 	// Use this for initialization

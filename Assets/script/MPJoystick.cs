@@ -70,7 +70,7 @@ public class MPJoystick : MonoBehaviour
 
 	void Disable ()
 	{ 
-		gameObject.active = false; 
+		gameObject.SetActive(false); 
 	}
 
 	private void ResetJoystick ()
